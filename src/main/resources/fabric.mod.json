@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "chiseledlens",
+  "version": "${version}",
+  "name": "chiseledlens",
+  "description": "Make ChiselsAndBits compatible with Iris Shaders",
+  "authors": ["singlerr"],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/chiseledlens/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "io.github.singlerr.chiseledlens.client.ChiseledLensClient"
+    ],
+    "main": [
+      "io.github.singlerr.chiseledlens.ChiseledLens"
+    ]
+  },
+  "mixins": [
+    "chiseledlens.mixins.json",
+    {
+      "config": "chiseledlens.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}",
+    "chiselsandbits": ">=1.3.0",
+    "iris": ">=1.7.0",
+    "indium": "*"
+  }
+}
