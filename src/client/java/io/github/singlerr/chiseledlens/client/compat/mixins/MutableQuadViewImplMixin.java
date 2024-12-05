@@ -18,19 +18,19 @@ public abstract class MutableQuadViewImplMixin implements FaceRegionHolder {
   private int stateId;
 
   @Override
-  public void setStateId(int stateId) {
-    this.stateId = stateId;
-  }
-
-  @Override
   public int getStateId() {
     return stateId;
   }
 
+  @Override
+  public void setStateId(int stateId) {
+    this.stateId = stateId;
+  }
+
   @Inject(method = "fromVanilla(Lnet/minecraft/client/renderer/block/model/BakedQuad;Lnet/fabricmc/fabric/api/renderer/v1/material/RenderMaterial;Lnet/minecraft/core/Direction;)Llink/infra/indium/renderer/mesh/MutableQuadViewImpl;", at = @At("HEAD"), remap = false)
   private void lens$injectFaceRegion(BakedQuad quad, RenderMaterial material, Direction cullFace,
-                                     CallbackInfoReturnable<MutableQuadViewImpl> cir){
-    if(quad instanceof FaceRegionHolder holder){
+                                     CallbackInfoReturnable<MutableQuadViewImpl> cir) {
+    if (quad instanceof FaceRegionHolder holder) {
       stateId = holder.getStateId();
     }
   }

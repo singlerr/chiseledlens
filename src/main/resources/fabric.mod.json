@@ -4,7 +4,9 @@
   "version": "${version}",
   "name": "chiseledlens",
   "description": "Make ChiselsAndBits compatible with Iris Shaders",
-  "authors": ["singlerr"],
+  "authors": [
+    "singlerr"
+  ],
   "contact": {},
   "license": "All-Rights-Reserved",
   "icon": "assets/chiseledlens/icon.png",

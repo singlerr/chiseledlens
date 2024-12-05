@@ -12,12 +12,14 @@ import org.spongepowered.asm.mixin.injection.At;
 @Mixin(MeshBuilderImpl.class)
 public abstract class MeshBuilderImplMixin {
 
-  @Shadow public abstract QuadEmitter getEmitter();
+  @Shadow
+  public abstract QuadEmitter getEmitter();
 
   @ModifyReturnValue(method = "build", at = @At(value = "RETURN"), remap = false)
-  private Mesh lens$transmitState(Mesh original){
+  private Mesh lens$transmitState(Mesh original) {
     QuadEmitter emitter = getEmitter();
-    if(emitter instanceof FaceRegionHolder holder && original instanceof FaceRegionHolder meshHolder){
+    if (emitter instanceof FaceRegionHolder holder &&
+        original instanceof FaceRegionHolder meshHolder) {
       meshHolder.setStateId(holder.getStateId());
     }
     return original;

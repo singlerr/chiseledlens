@@ -26,8 +26,8 @@ public abstract class MeshImplMixin implements FaceRegionHolder {
   }
 
   @Inject(method = "outputTo", at = @At(value = "HEAD"), remap = false)
-  private void lens$injectFaceRegion(QuadEmitter emitter, CallbackInfo ci){
-    if(emitter instanceof FaceRegionHolder holder){
+  private void lens$injectFaceRegion(QuadEmitter emitter, CallbackInfo ci) {
+    if (emitter instanceof FaceRegionHolder holder) {
       holder.setStateId(stateId);
     }
   }

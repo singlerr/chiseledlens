@@ -12,12 +12,12 @@ public abstract class BakedQuadMixin implements FaceRegionHolder {
   private int stateId = -1;
 
   @Override
-  public void setStateId(int stateId) {
-    this.stateId = stateId;
+  public int getStateId() {
+    return stateId;
   }
 
   @Override
-  public int getStateId() {
-    return stateId;
+  public void setStateId(int stateId) {
+    this.stateId = stateId;
   }
 }

@@ -5,14 +5,14 @@
   "plugin": "io.github.singlerr.chiseledlens.client.compat.plugin.ChiselsAndBitsMixinPlugin",
   "compatibilityLevel": "JAVA_17",
   "client": [
-    "ChiseledBlockModelMixin",
-    "XHFPTerrainVertexMixin",
     "BakedQuadMixin",
+    "ChiseledBlockModelMixin",
+    "MeshBuilderImplMixin",
+    "MeshImplMixin",
     "MutableQuadViewImplMixin",
     "TerrainRenderContextMixin",
     "VertexMixin",
-    "MeshBuilderImplMixin",
-    "MeshImplMixin"
+    "XHFPTerrainVertexMixin"
   ],
   "injectors": {
     "defaultRequire": 1

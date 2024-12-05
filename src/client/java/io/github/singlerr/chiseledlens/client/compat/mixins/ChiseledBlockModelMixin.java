@@ -15,10 +15,11 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 public abstract class ChiseledBlockModelMixin {
 
   @Redirect(method = "generateFaces", at = @At(value = "INVOKE", target = "Lmod/chiselsandbits/render/chiseledblock/IFaceBuilder;create(Lnet/minecraft/client/renderer/texture/TextureAtlasSprite;)Lnet/minecraft/client/renderer/block/model/BakedQuad;"), remap = false)
-  private BakedQuad lens$injectFaceRegion(IFaceBuilder instance, TextureAtlasSprite textureAtlasSprite,
-                                              @Local FaceRegion region){
+  private BakedQuad lens$injectFaceRegion(IFaceBuilder instance,
+                                          TextureAtlasSprite textureAtlasSprite,
+                                          @Local FaceRegion region) {
     BakedQuad quad = instance.create(textureAtlasSprite);
-    if(quad instanceof FaceRegionHolder holder){
+    if (quad instanceof FaceRegionHolder holder) {
       holder.setStateId(region.getStateId());
     }
     return quad;
