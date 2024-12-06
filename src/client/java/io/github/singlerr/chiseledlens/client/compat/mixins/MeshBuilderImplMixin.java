@@ -6,10 +6,12 @@ import link.infra.indium.renderer.mesh.MeshBuilderImpl;
 import net.fabricmc.fabric.api.renderer.v1.mesh.Mesh;
 import net.fabricmc.fabric.api.renderer.v1.mesh.QuadEmitter;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Pseudo;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 
 @Mixin(MeshBuilderImpl.class)
+@Pseudo
 public abstract class MeshBuilderImplMixin {
 
   @Shadow
