@@ -16,7 +16,7 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 @Pseudo
 public abstract class ChiseledBlockModelMixin {
 
-  @Redirect(method = "generateFaces", at = @At(value = "INVOKE", target = "Lmod/chiselsandbits/render/chiseledblock/IFaceBuilder;create(Lnet/minecraft/client/renderer/texture/TextureAtlasSprite;)Lnet/minecraft/client/renderer/block/model/BakedQuad;"), remap = false)
+  @Redirect(method = "generateFaces", at = @At(value = "INVOKE", target = "Lmod/chiselsandbits/render/chiseledblock/IFaceBuilder;create(Lnet/minecraft/client/renderer/texture/TextureAtlasSprite;)Lnet/minecraft/client/renderer/block/model/BakedQuad;"))
   private BakedQuad lens$injectFaceRegion(IFaceBuilder instance,
                                           TextureAtlasSprite textureAtlasSprite,
                                           @Local FaceRegion region) {
