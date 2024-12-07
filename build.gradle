@@ -46,8 +46,8 @@ dependencies {
 
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
     modClientCompileOnly "maven.modrinth:iris:${project.iris_version}"
-    modClientCompileOnly "maven.modrinth:indium:1.0.31+mc1.20.4"
-    modClientCompileOnly "maven.modrinth:sodium:mc1.20.4-0.5.8"
+    modClientCompileOnly "maven.modrinth:indium:${project.indium_version}"
+    modClientCompileOnly "maven.modrinth:sodium:${project.sodium_version}"
     modImplementation("mod.chiselsandbits:chiselsandbits:${project.chiselsandbits_version}"){
         transitive = false
     }

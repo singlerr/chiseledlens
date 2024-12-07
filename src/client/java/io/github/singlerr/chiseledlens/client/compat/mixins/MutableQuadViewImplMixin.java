@@ -29,7 +29,7 @@ public abstract class MutableQuadViewImplMixin implements FaceRegionHolder {
     this.stateId = stateId;
   }
 
-  @Inject(method = "fromVanilla(Lnet/minecraft/client/renderer/block/model/BakedQuad;Lnet/fabricmc/fabric/api/renderer/v1/material/RenderMaterial;Lnet/minecraft/core/Direction;)Llink/infra/indium/renderer/mesh/MutableQuadViewImpl;", at = @At("HEAD"), remap = false)
+  @Inject(method = "fromVanilla(Lnet/minecraft/client/renderer/block/model/BakedQuad;Lnet/fabricmc/fabric/api/renderer/v1/material/RenderMaterial;Lnet/minecraft/core/Direction;)Llink/infra/indium/renderer/mesh/MutableQuadViewImpl;", at = @At("HEAD"))
   private void lens$injectFaceRegion(BakedQuad quad, RenderMaterial material, Direction cullFace,
                                      CallbackInfoReturnable<MutableQuadViewImpl> cir) {
     if (quad instanceof FaceRegionHolder holder) {
